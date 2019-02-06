@@ -1,4 +1,5 @@
 var os = require('os');
+var colors = require('colors');
 var timeConverter = require('./timeConverter');
 
 function getOSinfo() {
@@ -11,12 +12,12 @@ function getOSinfo() {
   var userName = userInfo.username;
   var homeDir = userInfo.homedir;
 
-  process.stdout.write('\nSystem: ' + system);
-  process.stdout.write('\nRelease: ' + release);
-  process.stdout.write('\nCPU Model: ' + cpuModel);
-  process.stdout.write('\nUptime: ' + uptime);
-  process.stdout.write('\nUser name: ' + userName);
-  process.stdout.write('\nHome dir: ' + homeDir);
+  process.stdout.write('\nSystem: '.grey + system);
+  process.stdout.write('\nRelease: '.red + release);
+  process.stdout.write('\nCPU Model: '.blue + cpuModel);
+  process.stdout.write('\nUptime: '.green + uptime);
+  process.stdout.write('\nUser name: '.yellow + userName);
+  process.stdout.write('\nHome dir: '.white + homeDir);
   process.stdout.write('\n');
 }
 
