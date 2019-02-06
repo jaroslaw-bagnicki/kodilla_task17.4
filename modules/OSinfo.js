@@ -1,5 +1,5 @@
 var os = require('os');
-var math = require('mathjs');
+var timeConverter = require('./timeConverter');
 
 function getOSinfo() {
   var system = os.platform().trim();
@@ -7,7 +7,7 @@ function getOSinfo() {
   var cpu = os.cpus()[0];
   var cpuModel = cpu.model.trim();
   var t = cpu.times;
-  var uptime = math.round(((t.user + t.nice + t.sys + t.idle + t.irq) / 1000 / 60), 0);
+  var uptime = timeConverter.toHMSstring(t.user + t.nice + t.sys + t.idle + t.irq);
   var userInfo = os.userInfo();
   var userName = userInfo.username;
   var homeDir = userInfo.homedir;
@@ -15,7 +15,7 @@ function getOSinfo() {
   process.stdout.write('\nSystem: ' + system);
   process.stdout.write('\nRelease: ' + release);
   process.stdout.write('\nCPU Model: ' + cpuModel);
-  process.stdout.write('\nUptime: ~' + uptime + ' min');
+  process.stdout.write('\nUptime: ' + uptime);
   process.stdout.write('\nUser name: ' + userName);
   process.stdout.write('\nHome dir: ' + homeDir);
   process.stdout.write('\n');
