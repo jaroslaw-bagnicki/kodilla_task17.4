@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/jaroslaw-bagnicki/kodilla_task17.3/issues"
   },
-  "homepage": "https://github.com/jaroslaw-bagnicki/kodilla_task17.3#readme"
+  "homepage": "https://github.com/jaroslaw-bagnicki/kodilla_task17.3#readme",
+  "dependencies": {
+    "mathjs": "^5.4.2"
+  }
 }
