@@ -6,8 +6,7 @@ function getOSinfo() {
   var release = os.release().trim();
   var cpu = os.cpus()[0];
   var cpuModel = cpu.model.trim();
-  var t = cpu.times;
-  var uptime = timeConverter.toHMSstring(t.user + t.nice + t.sys + t.idle + t.irq);
+  var uptime = timeConverter.toHMSstring(os.uptime());
   var userInfo = os.userInfo();
   var userName = userInfo.username;
   var homeDir = userInfo.homedir;
